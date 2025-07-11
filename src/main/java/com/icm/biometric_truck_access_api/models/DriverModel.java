@@ -38,6 +38,10 @@ public class DriverModel {
     @Column(name = "license_plate", nullable = false, unique = true)
     private String licensePlate;
 
+    @Lob
+    @Column(name = "fingerprint_data", nullable = false)
+    private byte[] fingerprintData;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id",referencedColumnName = "id", nullable = false)
     private CompanyModel company;
